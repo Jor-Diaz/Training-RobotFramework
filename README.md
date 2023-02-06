@@ -10,6 +10,10 @@ Robot framework Study
 - admin-demo: https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F
 - OrangeHRM: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 
-## Command
+## Command File
 
 - robot -d Reports .robot
+
+## Command File Tag
+
+- robot -d Reports -i Name_Tag .robot
