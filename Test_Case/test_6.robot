@@ -42,20 +42,20 @@ Third Case
     [Tags]    testcombobox
     Open Browser    ${url3}   ${browser}
     Maximize Browser Window
-    Sleep    ${t}
-    Select From List By Label    select-demo    Monday
+    #Set Selenium Timeout    10
     
-    Sleep    ${t}
+    Set Selenium Implicit Wait    10 
+
+    Set Selenium Speed    0.2s
+    Select From List By Label    select-demo    Monday
     Select From List By Value    select-demo    Saturday
-    Sleep    ${t}
     Select From List By Index    select-demo    1
-    Sleep    ${t}
+    
     Execute Javascript    window.scrollTo(0,400)
 
     Select From List By Index    multi-select    3
-    Sleep    ${t}
     Select From List By Index    multi-select    5
-    Sleep    ${t}
+    
 
     Close Browser
 *** Keywords ***
