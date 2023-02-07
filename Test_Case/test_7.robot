@@ -13,12 +13,30 @@ First Case
     [Tags]    test1
     Open Browser    ${url}   ${browser}
     Maximize Browser Window
-    Set Selenium Implicit Wait    10 
+    Title Should Be    Selenium Easy - Input Form Demo with Validations
+    Set Selenium Implicit Wait    8
     Set Selenium Speed    .1s
     
-    Element Should Be Visible    name=first_name
+    Wait Until Page Contains    Input form with validations
+    Wait Until Page Does Not Contain    Input forr
+    Wait Until Page Contains    Demo Home
+
+    Wait Until Page Contains Element    //legend[contains(.,'Contact Us Today!')]
+    Wait Until Page Contains Element    contact_form
+    Wait Until Page Does Not Contain Element    contact_forr
+
+    Wait Until Element Is Visible    name=first_name
+    Wait Until Element Is Enabled    name=first_name
+    #Element Should Be Visible    name=first_name
     Input Text    name=first_name    Soniso
     Input Text    name=last_name    Test
+
+    Input Text    name=email    Soniso
+    Wait Until Page Contains    Please supply a valid email address
+    Log To Console    Check email Ok
+    Wait Until Element Is Visible    //small[contains(@data-bv-validator,'emailAddress')]
+    Log To Console    Check email Ok
+
     Input Text    name=email    Soniso@test.test
 
     Element Should Be Enabled    name=phone
