@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 *** Variables ***
 ${url}=    https://demoqa.com/text-box
 ${browser}=    firefox
-${t}=   .2 
+
 
 *** Test Cases ***
 Base Case
@@ -13,6 +13,9 @@ Base Case
     [Tags]    test1
     Open Browser    ${url}   ${browser}
     Maximize Browser Window
+    Set Selenium Implicit Wait    10 
+    Set Selenium Speed    0.3s
     
+    Sleep    2
     Close Browser
 *** Keywords ***
